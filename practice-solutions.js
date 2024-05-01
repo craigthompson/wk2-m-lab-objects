@@ -13,12 +13,9 @@
   Give it a key of name with the value being your name, and another key of age with the value being your age.
   Then alert your name using dot notation.
 */
+const randomAge = 18 + Math.floor(Math.random() * 53); // assuming all students are between 18 and 70 years old
 
-const me = {
-  name: "Craig",
-  age: 38,
-};
-
+const me = { name: 'Student Name', age: randomAge };
 alert(me.name);
 
 /// ////////////// PROBLEM 2 ///////////////////
@@ -29,12 +26,12 @@ alert(me.name);
 */
 
 const favoriteThings = {
-  band: "Collective Soul",
-  food: "Prime Rib",
-  person: "Michelle",
-  book: "Non-Fiction",
-  movie: "Interstellar",
-  holiday: "Christmas",
+  band: 'Some band',
+  food: 'Some food',
+  person: 'Some person',
+  book: 'Some book',
+  movie: 'Some movie',
+  holiday: 'Some holiday',
 };
 
 /*
@@ -42,42 +39,42 @@ const favoriteThings = {
   and then another key named 'brand' with the value being your favorite brand.
 */
 
-favoriteThings.car = "Model Y";
-favoriteThings["brand"] = "Apple";
+favoriteThings.car = 'Some car';
+favoriteThings.brand = 'Some brand';
 
 /*
   Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
   and change the value of the book key in your favoriteThings object to be 'Harry Potter'.
 */
 
-favoriteThings.food = "Chicken Nuggets";
-favoriteThings["book"] = "Harry Potter";
+favoriteThings.food = 'Chicken Nuggets';
+favoriteThings.book = 'Harry Potter';
 
 /// ////////////// PROBLEM 3 ///////////////////
 
 // Do not edit the code below.
 const user2 = {
-  name: "Bryan",
+  name: 'Bryan',
   age: 24,
-  pwHash: "U+Ldlngx2BYQk",
-  email: "BryanSmith33@gmail.com",
-  birthday: "05/02/1990",
-  username: "bryansmith33",
+  pwHash: 'U+Ldlngx2BYQk',
+  email: 'BryanSmith33@gmail.com',
+  birthday: '05/02/1990',
+  username: 'bryansmith33',
 };
 // Do not edit the code above.
 
 /*
   Let's say I, the user, decided to change my name and email address to the following:
   name -> 'Bryan G. Smith' and email -> 'bryan.smith@devmounta.in'.
-  Make that change without editing the code above.
+  Make that change without modifying the original object code above.
 */
 
-user2.name = "Bryan G. Smith";
-user2["email"] = "bryan.smith@devmounta.in";
+user2.name = 'Bryan G. Smith';
+user2.email = 'bryan.smith@devmounta.in';
 
 /// ////////////// PROBLEM 4 ///////////////////
 
-let shoppingCart = {};
+const shoppingCart = {};
 /*
   Above is an empty object called shoppingCart.
   Write a function called addToCart which takes in two parameters, an item and a quantity.
@@ -91,7 +88,7 @@ function addToCart(item, quantity) {
 /// ////////////// PROBLEM 5 ///////////////////
 
 /*
-  Write a function called greaterThan10 that takes in an object.
+  Write a function called greaterThan10 that takes in an object where all values are numbers.
   Write a for...in loop that loops over the object and changes any value that is greater than 10 to 0.
   Return the updated object.
 */
@@ -108,7 +105,7 @@ function greaterThan10(obj) {
 /// ////////////// PROBLEM 6 ///////////////////
 
 /*
-  Write a function called double that takes in an object.
+  Write a function called double that takes in an object where all values are numbers.
   Write a for...in loop that loops over the object and changes every value to be itself multiplied by 2.
   Return the updated object.
 */
@@ -127,11 +124,11 @@ function double(obj) {
 */
 
 function showValues(obj) {
-  let str = "";
-  for (const item in obj) {
-    str += obj[item];
+  let valuesString = '';
+  for (const key in obj) {
+    valuesString += obj[key];
   }
-  return str;
+  return valuesString;
 }
 
 /// ////////////// PROBLEM 8 ///////////////////
@@ -144,9 +141,9 @@ function showValues(obj) {
 
 function makeCard(cardNumber, expirationDate, securityCode) {
   return {
-    cardNumber,
-    expirationDate,
-    securityCode,
+    cardNumber: cardNumber,
+    expirationDate: expirationDate,
+    securityCode: securityCode,
   };
 }
 
@@ -183,21 +180,13 @@ for (const key in deleteTheBigNumbers) {
   }
 }
 
-/*
-  Once you complete a problem, refresh ./destructuring.html in your browser and check to see if the problem's test(s) are passing.
-  Passed tests will be indicated by a green circle.
-  Failed tests will be indicated by a red X.
-
-  You can refresh the page at any time to re-run all the tests.
-*/
-
 /// ////////////// PROBLEM 11 ///////////////////
 
 // Do not edit the code below.
 const carDetails = {
-  color: "red",
-  make: "toyota",
-  model: "tacoma",
+  color: 'red',
+  make: 'toyota',
+  model: 'tacoma',
   year: 1994,
 };
 // Do not edit the code above.
@@ -220,7 +209,7 @@ function greeting(obj) {
   const { firstName, lastName, title } = obj;
 
   // Do not edit the code below.
-  return "Hello, " + title + " " + firstName + " " + lastName + "!";
+  return `Hello, ${title} ${firstName} ${lastName}!`;
   // Do not edit the code above.
 }
 
@@ -249,12 +238,9 @@ function totalPopulation(obj) {
   Return false otherwise.
 */
 
-function usCanadaBorder(coordinates) {
-  const [latitude, longitude] = coordinates;
-  if (latitude === 49 && -123 <= longitude && longitude <= -95) {
-    return true;
-  }
-  return false;
+function usCanadaBorder(coords) {
+  const [latitude, longitude] = coords;
+  return latitude === 49 && longitude >= -123 && longitude <= -95;
 }
 
 /// ////////////// PROBLEM 15 ///////////////////
@@ -262,34 +248,34 @@ function usCanadaBorder(coordinates) {
 // Do not edit the code below.
 const employees = [
   {
-    firstName: "Von",
-    lastName: "Budibent",
-    email: "vbudibent0@163.com",
-    department: "Sales",
+    firstName: 'Von',
+    lastName: 'Budibent',
+    email: 'vbudibent0@163.com',
+    department: 'Sales',
   },
   {
-    firstName: "Catherina",
-    lastName: "Swalowe",
-    email: "cswalowe1@example.com",
-    department: "Engineering",
+    firstName: 'Catherina',
+    lastName: 'Swalowe',
+    email: 'cswalowe1@example.com',
+    department: 'Engineering',
   },
   {
-    firstName: "Theo",
-    lastName: "Trill",
-    email: "ttrill2@sina.com.cn",
-    department: "Services",
+    firstName: 'Theo',
+    lastName: 'Trill',
+    email: 'ttrill2@sina.com.cn',
+    department: 'Services',
   },
   {
-    firstName: "Elsy",
-    lastName: "McCrorie",
-    email: "emccrorie3@netscape.com",
-    department: "Legal",
+    firstName: 'Elsy',
+    lastName: 'McCrorie',
+    email: 'emccrorie3@netscape.com',
+    department: 'Legal',
   },
   {
-    firstName: "Lorie",
-    lastName: "Handsheart",
-    email: "lhandsheart4@fotki.com",
-    department: "Research and Development",
+    firstName: 'Lorie',
+    lastName: 'Handsheart',
+    email: 'lhandsheart4@fotki.com',
+    department: 'Research and Development',
   },
 ];
 // Do not edit the code above.
@@ -302,30 +288,28 @@ const employees = [
 */
 
 function employeeUpdater() {
-  for (const employee in employees) {
-    const employeeName = employees[employee].firstName;
-    if (employeeName === "Theo") {
-      employees.splice(employee, 1);
-    } else if (employeeName === "Lorie") {
-      employees[employee].department = "HR";
+  const newEmps = employees.filter((emp) => emp.firstName !== 'Theo');
+  for (const employee of newEmps) {
+    if (employee.firstName === 'Lorie') {
+      employee.department = 'HR';
     }
   }
-  return employees;
+  return newEmps;
 }
 
 /// ////////////// PROBLEM 16 ///////////////////
 
 // Do not edit the code below.
 const cat = {
-  name: "Fluffy",
+  name: 'Fluffy',
   catFriends: [
     {
-      name: "Grumpy",
-      activities: ["be grumpy", "eat food"],
+      name: 'Grumpy',
+      activities: ['be grumpy', 'eat food'],
     },
     {
-      name: "Lazy Bones",
-      activities: ["sleep", "pre-sleep naps"],
+      name: 'Lazy Bones',
+      activities: ['sleep', 'pre-sleep naps'],
     },
   ],
 };
@@ -337,31 +321,31 @@ const cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-let grumpyActivity = cat.catFriends[0].activities[1];
-let fluffy2ndFriend = cat.catFriends[1].name;
+// Code Here
+const grumpyActivity = cat.catFriends[0].activities[1];
+const fluffy2ndFriend = cat.catFriends[1].name;
 
 /// ////////////// PROBLEM 17 ///////////////////
 
 // Do not edit the code below.
 const myCar = {
-  make: "Toyota",
-  model: "Corolla",
+  make: 'Toyota',
+  model: 'Corolla',
   year: 1992,
   accidents: [
     {
-      date: "3/15/93",
-      damage: "$5,000",
+      date: '3/15/93',
+      damage: '$5,000',
       atFaultForAccident: true,
     },
     {
-      date: "7/4/98",
-      damage: "$2,200",
+      date: '7/4/98',
+      damage: '$2,200',
       atFaultForAccident: true,
     },
     {
-      date: "6/22/99",
-      damage: "$7,900",
+      date: '6/22/99',
+      damage: '$7,900',
       atFaultForAccident: true,
     },
   ],
@@ -378,8 +362,8 @@ const myCar = {
 */
 
 function recordCleaner() {
-  for (const record of myCar.accidents) {
-    record.atFaultForAccident = false;
+  for (const accident of myCar.accidents) {
+    accident.atFaultForAccident = false;
   }
 }
 
@@ -400,8 +384,6 @@ function recordCleaner() {
 */
 
 function largeNumbers({ first, second, third }) {
-  // const newArr = [first, second, third];
-  // return Math.min(...newArr);
   return Math.min(first, second, third);
 }
 
@@ -414,9 +396,14 @@ function largeNumbers({ first, second, third }) {
 */
 
 function numberGroups({ a, b, c }) {
-  const newArr = [a, b, c];
-  const newArrLengths = [a.length, b.length, c.length];
-  const longestArray = Math.max(...newArrLengths);
-  const longestArrayIndex = newArrLengths.indexOf(longestArray);
-  return newArr[longestArrayIndex];
+  if (a.length > b.length) {
+    return a.length > c.length ? a : c;
+    // This is called a ternary operator. It's a shorthand way of saying:
+    // if (a.length > c.length) {
+    //    return a
+    // } else {
+    //    return c
+    // }
+  }
+  return b.length > c.length ? b : c;
 }
